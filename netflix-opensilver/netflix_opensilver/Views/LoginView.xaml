@@ -60,7 +60,7 @@
                     Margin="0,20,0,0"
                     Background="#EB3324"
                     Content="로그인"
-                    Foreground="White"
+                    Foreground="White" Command="{Binding LoginCommand}"
                     HoverBackground="#C22A1E" />
 
                 <TextBlock

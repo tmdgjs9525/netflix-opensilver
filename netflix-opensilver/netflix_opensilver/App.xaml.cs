@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using netflix_opensilver.Core;
 using netflix_opensilver.ViewModels;
 using netflix_opensilver.Views;
+using netflix_opensilver.Views.Main;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -43,12 +44,13 @@ namespace netflix_opensilver
     {
         public static IServiceProvider ConfigureService(this IServiceCollection services)
         {
+            services.AddSingleton<MainPage>();
+            services.AddSingleton<MainPageViewModel>();
+
             Container container = new Container(services);
 
             container.AddSingletonNavigation<LoginView, LoginViewModel>();
-
-            services.AddSingleton<MainPage>();
-            services.AddSingleton<MainPageViewModel>();
+            container.AddSingletonNavigation<MainView, MainViewModel>();
 
             return services.BuildServiceProvider();
         }

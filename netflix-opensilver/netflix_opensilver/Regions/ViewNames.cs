@@ -9,6 +9,6 @@ namespace netflix_opensilver.Regions
     public class ViewNames
     {
         public static string LoginView = nameof(LoginView);
-
+        public static string MainView = nameof(MainView);
     }
 }

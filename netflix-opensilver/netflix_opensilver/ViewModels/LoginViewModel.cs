@@ -1,4 +1,7 @@
-﻿using netflix_opensilver.Core;
+﻿using CommunityToolkit.Mvvm.Input;
+using netflix_opensilver.Core;
+using netflix_opensilver.Core.Navigate;
+using netflix_opensilver.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +10,21 @@ using System.Threading.Tasks;
 
 namespace netflix_opensilver.ViewModels
 {
-    internal class LoginViewModel : ViewModelBase
+    internal partial class LoginViewModel : ViewModelBase
     {
+        #region fields
+        private readonly INavigationService _navigationService;
+        #endregion
+        public LoginViewModel(INavigationService navigationService)
+        {
+            _navigationService = navigationService;
+
+        }
+
+        [RelayCommand]
+        private void Login()
+        {
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
+        }
     }
 }
