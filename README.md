@@ -5,7 +5,9 @@
 
 ## netflix-opensilver.Core
 코어 기능이 들어있는 프로젝트
+
 Prism의 NavigationService를 AttachProperty를 이용해 모방했습니다.
+
 Prism의 DialogService를 모방했습니다.
 
 ## netflix_opensilver.Support
