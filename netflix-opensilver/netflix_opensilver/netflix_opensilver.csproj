@@ -4,6 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <EnableDefaultItems>false</EnableDefaultItems>
     <DefineSilverlight>true</DefineSilverlight>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,6 +38,9 @@
     <Page Include="Views\Main\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Main\RecommendedVideo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Main\TopMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -45,6 +49,7 @@
   <ItemGroup>
     <Compile Include="App.xaml.cs" />
     <Compile Include="MainPage.xaml.cs" />
+    <Compile Include="Models\MediaInfo.cs" />
     <Compile Include="Regions\DialogNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
     <Compile Include="Regions\ViewNames.cs" />
@@ -55,6 +60,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\LoginView.xaml.cs" />
     <Compile Include="Views\Main\MainView.xaml.cs" />
+    <Compile Include="Views\Main\RecommendedVideo.xaml.cs" />
     <Compile Include="Views\Main\TopMenu.xaml.cs" />
   </ItemGroup>
 

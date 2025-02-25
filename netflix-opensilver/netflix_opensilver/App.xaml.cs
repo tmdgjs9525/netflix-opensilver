@@ -21,8 +21,8 @@ namespace netflix_opensilver
 
             IServiceProvider provider = serviceInitialize();
 
-            var mainView = provider.GetRequiredService<MainPage>();
-            mainView.DataContext = provider.GetRequiredService<MainPageViewModel>();
+            var mainView = provider.GetRequiredService<MainView>();
+            //mainView.DataContext = provider.GetRequiredService<MainPageViewModel>();
 
             Window.Current.Content = mainView;
         }
