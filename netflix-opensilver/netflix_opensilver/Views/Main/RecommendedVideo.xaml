@@ -6,13 +6,20 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="{Binding PosterUrl}" />
+            <ImageBrush ImageSource="{Binding RecommendedItem.PosterUrl}" />
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="{Binding Description}" />
+        <StackPanel Grid.Row="1">
+            <TextBlock
+                FontSize="24"
+                Foreground="White"
+                Text="{Binding RecommendedItem.Description}" />
+            <Button Content="재생" />
+        </StackPanel>
+
     </Grid>
 </UserControl>

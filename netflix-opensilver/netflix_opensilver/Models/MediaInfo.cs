@@ -18,7 +18,7 @@ namespace netflix_opensilver.Models
         public partial string Genre { get; set; } = string.Empty; // 장르
 
         [ObservableProperty]
-        public partial string Director { get; set; } = string.Empty; // 감독 (영화) / 연출 (드라마)
+        public partial string Director { get; set; } = string.Empty; // 감독
 
         [ObservableProperty]
         public partial string Cast { get; set; } = string.Empty; // 출연진 
