@@ -6,7 +6,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="{Binding RecommendedItem.PosterUrl}" />
+            <ImageBrush Stretch="UniformToFill" ImageSource="{Binding RecommendedItem.PosterUrl}" />
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*" />
