@@ -15,8 +15,23 @@
             <local:RecommendedVideo Grid.Row="0" Grid.RowSpan="2" />
 
             <local:TopMenu Grid.Row="0" />
-            
-            
+
+            <TextBlock Grid.Row="2" Text="{Binding Test.Name}" />
+            <ItemsControl Grid.Row="2" ItemsSource="{Binding Test.RecommendList}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image
+                            Margin="10,0,0,0"
+                            Cursor="Hand"
+                            Source="{Binding PosterUrl}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </Grid>
     </ScrollViewer>
 
