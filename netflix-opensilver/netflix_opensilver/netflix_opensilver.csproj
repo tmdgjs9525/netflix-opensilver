@@ -25,6 +25,10 @@
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Views\IconButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Views\PlaceHolderTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -53,6 +57,9 @@
     <Compile Include="Regions\DialogNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
     <Compile Include="Regions\ViewNames.cs" />
+    <Compile Include="Themes\Units\IconButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Themes\Units\GradientHoverButton.cs" />
     <Compile Include="Themes\Units\PlaceHolderTextBox.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
