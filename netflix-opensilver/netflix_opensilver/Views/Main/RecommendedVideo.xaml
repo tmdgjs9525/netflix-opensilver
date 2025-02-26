@@ -16,13 +16,15 @@
             Source="{Binding RecommendedItem.PosterUrl}"
             Stretch="UniformToFill" />
 
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1" Margin="50,0,50,0">
             <TextBlock
                 FontSize="24"
                 Foreground="White"
                 Text="{Binding RecommendedItem.Description}" />
             <StackPanel Orientation="Horizontal">
                 <units:IconButton
+                    Width="120"
+                    Height="50"
                     HorizontalAlignment="Left"
                     Background="White"
                     Content="재생"
@@ -32,9 +34,11 @@
                     Icon="M8,5.14V19.14L19,12.14L8,5.14Z"
                     IconSize="24" />
                 <units:IconButton
+                    Width="120" Margin="20,0,0,0"
+                    Height="50"
                     HorizontalAlignment="Left"
                     Background="Gray"
-                    Content="재생"
+                    Content="상세 정보"
                     Fill="#AAFFFFFF"
                     FontSize="24"
                     Foreground="#AAFFFFFF"
@@ -43,7 +47,11 @@
             </StackPanel>
         </StackPanel>
 
-        <Border Grid.Row="1" HorizontalAlignment="Stretch" Height="300" VerticalAlignment="Bottom">
+        <Border
+            Grid.Row="1"
+            Height="300"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Offset="1" Color="#AA000000" />

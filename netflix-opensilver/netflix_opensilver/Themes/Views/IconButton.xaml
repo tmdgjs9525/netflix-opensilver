@@ -10,7 +10,7 @@
                         x:Name="border"
                         Background="{TemplateBinding Background}"
                         CornerRadius="{TemplateBinding CornerRadius}">
-                        <StackPanel Margin="5,2,10,2" Orientation="Horizontal">
+                        <StackPanel Margin="5,2,10,2" Orientation="Horizontal" HorizontalAlignment="Center">
                             <Viewbox Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}">
                                 <Path Data="{TemplateBinding Icon}" Fill="{TemplateBinding Fill}" />
                             </Viewbox>

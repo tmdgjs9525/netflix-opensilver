@@ -3,6 +3,7 @@ using netflix_opensilver.Core;
 using netflix_opensilver.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,10 @@ namespace netflix_opensilver.ViewModels
 
         [ObservableProperty]
         private MediaInfo test;
+
+        [ObservableProperty]
+        public partial ObservableCollection<RecommendationList> RecommendationList { get; set; }
+
         public MainViewModel()
         {
             RecommendedItem = new MediaInfo
