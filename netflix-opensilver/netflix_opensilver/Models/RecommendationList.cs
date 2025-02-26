@@ -14,6 +14,6 @@ namespace netflix_opensilver.Models
         public partial string RecommendationListName { get; set; }
 
         [ObservableProperty]
-        public partial ObservableCollection<MediaInfo> RecommendList { get; set; } = new ObservableCollection<MediaInfo>();
+        public partial ObservableCollection<VideoInfo> RecommendList { get; set; } = new ObservableCollection<VideoInfo>();
     }
 }

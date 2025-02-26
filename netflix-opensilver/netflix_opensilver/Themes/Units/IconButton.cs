@@ -12,6 +12,16 @@ namespace netflix_opensilver.Themes.Units
 {
     internal class IconButton : Button
     {
+        public bool UseText
+        {
+            get { return (bool)GetValue(UseTextProperty); }
+            set { SetValue(UseTextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for UseText.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty UseTextProperty =
+            DependencyProperty.Register("UseText", typeof(bool), typeof(IconButton), new PropertyMetadata(true));
+
         public CornerRadius CornerRadius
         {
             get { return (CornerRadius)GetValue(CornerRadiusProperty); }

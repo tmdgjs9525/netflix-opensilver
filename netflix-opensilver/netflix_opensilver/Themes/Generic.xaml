@@ -3,5 +3,6 @@
         <ResourceDictionary Source="Views/GradientHoverButton.xaml" />
         <ResourceDictionary Source="Views/PlaceHolderTextBox.xaml" />
         <ResourceDictionary Source="Views/IconButton.xaml" />
+        <ResourceDictionary Source="Views/VideoPreview.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

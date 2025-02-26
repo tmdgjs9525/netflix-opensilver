@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="netflix_opensilver.Views.Main.RecommendedVideo"
+    x:Class="netflix_opensilver.Views.Main.FrontPageVideo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:netflix_opensilver.Views.Main"
@@ -34,8 +34,9 @@
                     Icon="M8,5.14V19.14L19,12.14L8,5.14Z"
                     IconSize="24" />
                 <units:IconButton
-                    Width="120" Margin="20,0,0,0"
+                    Width="120"
                     Height="50"
+                    Margin="20,0,0,0"
                     HorizontalAlignment="Left"
                     Background="Gray"
                     Content="상세 정보"

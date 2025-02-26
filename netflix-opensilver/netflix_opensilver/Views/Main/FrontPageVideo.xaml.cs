@@ -12,9 +12,9 @@ using System.Windows.Navigation;
 
 namespace netflix_opensilver.Views.Main
 {
-    public partial class RecommendedVideo : UserControl
+    public partial class FrontPageVideo : UserControl
     {
-        public RecommendedVideo()
+        public FrontPageVideo()
         {
             this.InitializeComponent();
         }

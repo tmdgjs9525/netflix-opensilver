@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace netflix_opensilver.Models
 {
-    public partial class MediaInfo : ObservableObject
+    public partial class VideoInfo : ObservableObject
     {
         public int Id { get; set; }
 
