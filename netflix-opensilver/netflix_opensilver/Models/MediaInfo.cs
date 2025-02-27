@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,12 @@ namespace netflix_opensilver.Models
 
         [ObservableProperty]
         public partial string Title { get; set; } = string.Empty; // 제목
+
+        [ObservableProperty]
+        public partial Episode LastWatchedEpisode { get; set; }
+
+        [ObservableProperty]
+        public partial ObservableCollection<Episode> Episodes { get; set; }
 
         [ObservableProperty]
         public partial string Genre { get; set; } = string.Empty; // 장르
@@ -37,5 +44,8 @@ namespace netflix_opensilver.Models
 
         [ObservableProperty]
         public partial double Rating { get; set; } // 평점
+
+        [ObservableProperty]
+        public partial bool HasWatchedVideo { get; set; }
     }
 }

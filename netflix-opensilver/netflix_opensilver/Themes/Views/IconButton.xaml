@@ -10,7 +10,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="units:IconButton">
                     <Border
-                        x:Name="border"
+                        x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
                         Background="{TemplateBinding Background}"
                         CornerRadius="{TemplateBinding CornerRadius}">
                         <StackPanel

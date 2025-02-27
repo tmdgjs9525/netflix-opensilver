@@ -65,6 +65,7 @@
     <Compile Include="App.xaml.cs" />
     <Compile Include="Converter\BoolToVisibleConverter.cs" />
     <Compile Include="MainPage.xaml.cs" />
+    <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\MediaInfo.cs" />
     <Compile Include="Models\RecommendationList.cs" />
     <Compile Include="Regions\DialogNames.cs" />
