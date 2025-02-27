@@ -2,6 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="clr-namespace:netflix_opensilver.Themes.Units">
+
+
     <Style TargetType="units:VideoPreview">
         <Setter Property="Template">
             <Setter.Value>
@@ -17,16 +19,42 @@
                         </StackPanel.Effect>
                         <Image Source="{Binding PosterUrl}" />
                         <StackPanel Background="#181818" Orientation="Vertical">
-                            <units:IconButton
-                                HorizontalAlignment="Left"
-                                Background="White"
-                                CornerRadius="100"
-                                Fill="Black"
-                                FontSize="24"
-                                Foreground="Black"
-                                Icon="M8,5.14V19.14L19,12.14L8,5.14Z"
-                                IconSize="24"
-                                UseText="False" />
+                            <StackPanel Orientation="Horizontal">
+                                <units:IconButton
+                                    HorizontalAlignment="Left"
+                                    Background="White"
+                                    CornerRadius="100"
+                                    Fill="Black"
+                                    FontSize="24"
+                                    Foreground="Black"
+                                    Icon="{StaticResource PlayIcon}"
+                                    IconSize="24"
+                                    UseText="False" />
+                                <units:IconButton
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    Background="White"
+                                    CornerRadius="100"
+                                    Fill="Black"
+                                    FontSize="24"
+                                    Foreground="Black"
+                                    Icon="{StaticResource PlusIcon}"
+                                    IconSize="24"
+                                    UseText="False" />
+                                <units:IconButton
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    Background="White"
+                                    CornerRadius="100"
+                                    Fill="Black"
+                                    FontSize="24"
+                                    Foreground="Black"
+                                    Icon="{StaticResource ThumbUpIcon}"
+                                    IconSize="24"
+                                    UseText="False" />
+                                
+                            </StackPanel>
+
                         </StackPanel>
                     </StackPanel>
                 </ControlTemplate>
