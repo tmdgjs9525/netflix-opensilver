@@ -11,7 +11,8 @@
                     <Border
                         Margin="10,0,0,0"
                         Background="#181818"
-                        CornerRadius="10">
+                        CornerRadius="10"
+                        RenderTransformOrigin="0.5,0.5">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="6*" />
@@ -31,7 +32,8 @@
                                 Margin="10,20,0,0"
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
-                                Orientation="Vertical">
+                                Orientation="Vertical"
+                                Visibility="Collapsed">
                                 <DockPanel>
                                     <units:IconButton
                                         HorizontalAlignment="Left"
@@ -88,7 +90,8 @@
                                         IconSize="24"
                                         UseText="False" />
                                 </DockPanel>
-                                <TextBlock Margin="0,10,0,0"
+                                <TextBlock
+                                    Margin="0,10,0,10"
                                     FontSize="16"
                                     Foreground="White"
                                     Text="{Binding LastWatchedEpisode}" />

@@ -70,9 +70,9 @@ namespace netflix_opensilver.Themes.Units
 
 
 
-        static IconButton()
+        public IconButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(IconButton), new FrameworkPropertyMetadata(typeof(IconButton)));
+            DefaultStyleKey = typeof(IconButton);
         }
 
         public override void OnApplyTemplate()

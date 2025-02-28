@@ -35,9 +35,9 @@ namespace netflix_opensilver.Themes.Units
 
 
 
-        static PlaceHolderTextBox()
+        public PlaceHolderTextBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(PlaceHolderTextBox), new FrameworkPropertyMetadata(typeof(PlaceHolderTextBox)));
+            DefaultStyleKey = typeof(PlaceHolderTextBox);
         }
 
         public override void OnApplyTemplate()

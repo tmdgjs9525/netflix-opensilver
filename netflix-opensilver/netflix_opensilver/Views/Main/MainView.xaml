@@ -9,30 +9,34 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="68" />
-                <RowDefinition Height="800" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="700" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <local:FrontPageVideo Grid.Row="0" Grid.RowSpan="2" />
 
             <local:TopMenu Grid.Row="0" />
 
-            <TextBlock Grid.Row="2" Text="{Binding Test.Name}" />
-            <ItemsControl
-                Grid.Row="2"
-                Margin="0,0,0,0"
-                ItemsSource="{Binding Test.RecommendList}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <units:VideoPreview />
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <StackPanel Margin="50,-50,0,0" Grid.Row="2" Grid.RowSpan="2">
+                <TextBlock
+                    Margin="10,0,0,0"
+                    FontSize="24"
+                    Foreground="White"
+                    Text="{Binding Test.RecommendationListName}" />
+                <ItemsControl Margin="0,0,0,0" ItemsSource="{Binding Test.RecommendList}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <units:VideoPreview />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+
         </Grid>
     </ScrollViewer>
 

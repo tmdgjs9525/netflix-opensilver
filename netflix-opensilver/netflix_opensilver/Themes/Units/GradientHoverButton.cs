@@ -34,9 +34,9 @@ namespace netflix_opensilver.Themes.Units
         // Using a DependencyProperty as the backing store for HoverBackground.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty HoverBackgroundProperty =
             DependencyProperty.Register("HoverBackground", typeof(Color), typeof(GradientHoverButton), new PropertyMetadata(null));
-        static GradientHoverButton()
+        public GradientHoverButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(GradientHoverButton), new FrameworkPropertyMetadata(typeof(GradientHoverButton)));
+            DefaultStyleKey = typeof(GradientHoverButton);
         }
 
         public override void OnApplyTemplate()

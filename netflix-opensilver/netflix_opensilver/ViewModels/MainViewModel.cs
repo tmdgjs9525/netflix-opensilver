@@ -33,6 +33,7 @@ namespace netflix_opensilver.ViewModels
 
             Test = new RecommendationList
             {
+                
                 RecommendationListName = "User를 위한 콘텐츠",
                 RecommendList = new ObservableCollection<VideoInfo>
                 {
