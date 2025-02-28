@@ -27,7 +27,7 @@
                                     Color="Black" />
                             </StackPanel.Effect>-->
                             <Image Source="{Binding PosterUrl}" />
-                            <StackPanel
+                            <StackPanel x:Name="BottomMenu"
                                 Grid.Row="1"
                                 Margin="10,20,0,0"
                                 HorizontalAlignment="Stretch"

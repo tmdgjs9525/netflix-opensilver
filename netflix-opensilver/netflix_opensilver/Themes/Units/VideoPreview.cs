@@ -16,10 +16,13 @@ namespace netflix_opensilver.Themes.Units
         private readonly ScaleTransform _scaleTransform;
         private readonly Storyboard _expandStoryboard;
         private readonly Storyboard _shrinkStoryboard;
+
+        private Panel _bottomPanel;
         public VideoPreview()
         {
             DefaultStyleKey = typeof(VideoPreview);
 
+ 
             _scaleTransform = new ScaleTransform();
             RenderTransform = _scaleTransform;
             RenderTransformOrigin = new Point(0.5, 0.5); // 중심을 기준으로 확대/축소
@@ -29,36 +32,35 @@ namespace netflix_opensilver.Themes.Units
 
             // 애니메이션 설정 (스케일 변화)
             _expandStoryboard = CreateScaleAnimation(1, 1.5);
-            _shrinkStoryboard = CreateScaleAnimation(1.5, 1); 
+            _shrinkStoryboard = CreateScaleAnimation(1.5, 1);
+
+            _expandStoryboard.Completed += (s, e) =>
+            {
+
+            };
+
+            _shrinkStoryboard.Completed += (s, e) =>
+            {
+                _bottomPanel.Visibility = Visibility.Collapsed;
+            };
         }
 
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
 
-          
+            _bottomPanel = (Panel)GetTemplateChild("BottomMenu");
         }
 
         private void OnMouseLeave(object sender, MouseEventArgs e)
         {
-            //_expandStoryboard.Stop();
-            //var animationState = _shrinkStoryboard.GetCurrentState();
-            //if (animationState != ClockState.Active || animationState != ClockState.Filling)
-            //{
-                _shrinkStoryboard.Begin();
-            //}
+            _shrinkStoryboard.Begin();
         }
 
         private void OnMouseEnter(object sender, MouseEventArgs e)
         {
-            //_shrinkStoryboard.Stop();
-            //var animationState = _expandStoryboard.GetCurrentState();
-            //if (animationState != ClockState.Active || animationState != ClockState.Filling)
-            //{
-            //    _expandStoryboard.Begin();
-            //}
+            _bottomPanel.Visibility = Visibility.Visible;
             _expandStoryboard.Begin();
-
         }
 
 
@@ -74,7 +76,7 @@ namespace netflix_opensilver.Themes.Units
                 Duration = TimeSpan.FromMilliseconds(500),
                 EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
             };
-            Storyboard.SetTarget(scaleXAnimation,_scaleTransform);
+            Storyboard.SetTarget(scaleXAnimation, _scaleTransform);
             Storyboard.SetTargetProperty(scaleXAnimation, new PropertyPath(ScaleTransform.ScaleXProperty));
 
             // Y축 스케일 애니메이션
