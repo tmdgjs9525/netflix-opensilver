@@ -26,7 +26,7 @@
                                     ShadowDepth="4"
                                     Color="Black" />
                             </StackPanel.Effect>-->
-                            <Image Source="{Binding PosterUrl}" />
+                            <Image Source="{Binding PosterUrl}" IsHitTestVisible="False"/>
                             <StackPanel x:Name="BottomMenu"
                                 Grid.Row="1"
                                 Margin="10,20,0,0"

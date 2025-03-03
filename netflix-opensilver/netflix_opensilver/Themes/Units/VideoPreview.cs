@@ -22,7 +22,6 @@ namespace netflix_opensilver.Themes.Units
         {
             DefaultStyleKey = typeof(VideoPreview);
 
- 
             _scaleTransform = new ScaleTransform();
             RenderTransform = _scaleTransform;
             RenderTransformOrigin = new Point(0.5, 0.5); // 중심을 기준으로 확대/축소
@@ -33,11 +32,6 @@ namespace netflix_opensilver.Themes.Units
             // 애니메이션 설정 (스케일 변화)
             _expandStoryboard = CreateScaleAnimation(1, 1.5);
             _shrinkStoryboard = CreateScaleAnimation(1.5, 1);
-
-            _expandStoryboard.Completed += (s, e) =>
-            {
-
-            };
 
             _shrinkStoryboard.Completed += (s, e) =>
             {
@@ -59,6 +53,7 @@ namespace netflix_opensilver.Themes.Units
 
         private void OnMouseEnter(object sender, MouseEventArgs e)
         {
+            //Canvas.SetZIndex(this,-10);
             _bottomPanel.Visibility = Visibility.Visible;
             _expandStoryboard.Begin();
         }
@@ -73,8 +68,8 @@ namespace netflix_opensilver.Themes.Units
             {
                 From = from,
                 To = to,
-                Duration = TimeSpan.FromMilliseconds(500),
-                EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+                Duration = TimeSpan.FromMilliseconds(400),
+                EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
             };
             Storyboard.SetTarget(scaleXAnimation, _scaleTransform);
             Storyboard.SetTargetProperty(scaleXAnimation, new PropertyPath(ScaleTransform.ScaleXProperty));
@@ -84,8 +79,8 @@ namespace netflix_opensilver.Themes.Units
             {
                 From = from,
                 To = to,
-                Duration = TimeSpan.FromMilliseconds(500),
-                EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+                Duration = TimeSpan.FromMilliseconds(400),
+                EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
             };
             Storyboard.SetTarget(scaleYAnimation, _scaleTransform);
             Storyboard.SetTargetProperty(scaleYAnimation, new PropertyPath(ScaleTransform.ScaleYProperty));

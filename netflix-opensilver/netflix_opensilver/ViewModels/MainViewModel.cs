@@ -33,43 +33,51 @@ namespace netflix_opensilver.ViewModels
 
             Test = new RecommendationList
             {
-                
-                RecommendationListName = "User를 위한 콘텐츠",
-                RecommendList = new ObservableCollection<VideoInfo>
-                {
-                    new VideoInfo
-                    {
-                        PosterUrl = "https://occ-0-4960-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRL5uUKHQnSZM6m9QBnI3eMCkB3GhhARVRFX4O_vSGv0ZC7DBYkMh3Yr_cXp75K0XYJ36Xmv9ai9OGhOz-NoDY4jQNrqB6N0ljHHdBJ2zxyaDF68qhF00e1OaSG8x4qAcPgORKUMH9NzkqCIjJr2-TJcuRNFHHCGi7A8Ropn-FMN7TfBJnsd_JRmwyX5MpntmaeWw1ZH3o_m4C7mhcZ-CppO6uUNgBIdj5ApY2Fyso5A8Vs6AsoDokmcfWugeL-fVRCdgyDtIGTQiCzZMw3aZiWDDGNAlp1RKL2dG6LkWd5ZCKoFa-hJDa7l1MdzO0Polptt4ekjA3NakbpeXWFWdw.webp?r=ef0",
-                        LastWatchedEpisode = new Episode()
-                        {
-                            Season = 1,
-                            EpisodeNumber = 1,
-                            Title = "첫화",
-                        }
-                    },
-                    new VideoInfo
-                    {
-                        PosterUrl = "https://occ-0-4960-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRL5uUKHQnSZM6m9QBnI3eMCkB3GhhARVRFX4O_vSGv0ZC7DBYkMh3Yr_cXp75K0XYJ36Xmv9ai9OGhOz-NoDY4jQNrqB6N0ljHHdBJ2zxyaDF68qhF00e1OaSG8x4qAcPgORKUMH9NzkqCIjJr2-TJcuRNFHHCGi7A8Ropn-FMN7TfBJnsd_JRmwyX5MpntmaeWw1ZH3o_m4C7mhcZ-CppO6uUNgBIdj5ApY2Fyso5A8Vs6AsoDokmcfWugeL-fVRCdgyDtIGTQiCzZMw3aZiWDDGNAlp1RKL2dG6LkWd5ZCKoFa-hJDa7l1MdzO0Polptt4ekjA3NakbpeXWFWdw.webp?r=ef0",
-                        LastWatchedEpisode = new Episode()
-                        {
-                            Season = 1,
-                            EpisodeNumber = 1,
-                            Title = "첫화",
-                        }
-                    },
-                    new VideoInfo
-                    {
-                        PosterUrl = "https://occ-0-4960-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRL5uUKHQnSZM6m9QBnI3eMCkB3GhhARVRFX4O_vSGv0ZC7DBYkMh3Yr_cXp75K0XYJ36Xmv9ai9OGhOz-NoDY4jQNrqB6N0ljHHdBJ2zxyaDF68qhF00e1OaSG8x4qAcPgORKUMH9NzkqCIjJr2-TJcuRNFHHCGi7A8Ropn-FMN7TfBJnsd_JRmwyX5MpntmaeWw1ZH3o_m4C7mhcZ-CppO6uUNgBIdj5ApY2Fyso5A8Vs6AsoDokmcfWugeL-fVRCdgyDtIGTQiCzZMw3aZiWDDGNAlp1RKL2dG6LkWd5ZCKoFa-hJDa7l1MdzO0Polptt4ekjA3NakbpeXWFWdw.webp?r=ef0",
-                        LastWatchedEpisode = new Episode()
-                        {
-                            Season = 1,
-                            EpisodeNumber = 1,
-                            Title = "첫화",
-                        }
-                    }
-                }
-            };
 
+                RecommendationListName = "User를 위한 콘텐츠",
+                RecommendList = GetVideoInfos()
+            };
+        }
+
+        private static ObservableCollection<VideoInfo> GetVideoInfos()
+        {
+            var list = new ObservableCollection<VideoInfo>();
+
+            for (int i = 0 ; i < 5 ; i++)
+            {
+                list.Add(new VideoInfo
+                {
+                    PosterUrl = "https://occ-0-4960-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABQQPgp0enivys4Kys7bdtv9EhBTui3ZSHqRheO1PRKTPalv5LWiyIOxzWBCakweVYXPj_cdOJnhvx4CW-QO_I0_eSeuwaokkM0gWTPt5IecUmLNHxGRFc0CXIi0ui3X8s13VNo902l__cbDgZqneJZeyTVkEtwN07h_mP-0sjfOc3jr94vjq9nDrN6eQb4h3k5fx7nyzzo7PCF7ZVyUBw-Y9xJeEDgjs7B9J2_ZiV3WxeOgfg12W1_04GHbdW0MdJRUKQ8JzveJp8lZb7B10PDt_a7BNntY60QLyPjlxesoP0wIgDTMk0x3ABLkF3V2eanIfL9qazmMHBrUNF1-w6YMELfJKpBy8uCaMHRGhRPZIOqSoVty1_3ZQRS67tgX1tb5r1DYeEePhgwxNNX8fKQULQHyb-sYeMHwOV9tirEc8LDtLa6TDMrA34T_21tr4T1J2lyKDfesi0c-Rvu-GQvjLqA1v8wnBP67jQOmwsEgbPVd3AYYRAnFfFZpr9gqweWg.webp?r=edb",
+                    LastWatchedEpisode = new Episode()
+                    {
+                        Season = 1,
+                        EpisodeNumber = 1,
+                        Title = "첫화",
+                    }
+                });
+                list.Add(new VideoInfo
+                {
+                    PosterUrl = "https://occ-0-4960-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZtMQgEddAKxtEMt7Iq1kslEbbrGGvExUlgbZ5e8VBVv_yfW1csTEkRCqSsyaRdp15HOOP-cwvZoeQ3xS-UtDcawEfK7YlK8qdj-lv2vUMEV_0YI_a-knGDYQHpvC_Fsl4wIocPi6tmyKSEzhFzIWuGMy8eWsb8v-fzImFs0W3lgxhUuAH-T7Uk08LPPryI.jpg?r=298",
+                    LastWatchedEpisode = new Episode()
+                    {
+                        Season = 1,
+                        EpisodeNumber = 1,
+                        Title = "첫화",
+                    }
+                });
+                list.Add(new VideoInfo
+                {
+                    PosterUrl = "https://occ-0-4960-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSdbYn6Mxlo0kKzddB4v3iBYW1oRxI7Ic-yFDFofgP4fYzimqorlW5dU-nLcJpAgVvX4EXJJAFZEtLhRlwOnRPEhNtmGEodCSgc.webp?r=699",
+                    LastWatchedEpisode = new Episode()
+                    {
+                        Season = 1,
+                        EpisodeNumber = 1,
+                        Title = "첫화",
+                    }
+                });
+            }
+
+            return list;
         }
     }
 }
