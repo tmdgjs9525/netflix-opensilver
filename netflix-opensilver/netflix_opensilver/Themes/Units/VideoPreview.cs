@@ -14,8 +14,8 @@ namespace netflix_opensilver.Themes.Units
     internal class VideoPreview : Control
     {
         private readonly ScaleTransform _scaleTransform;
-        private readonly Storyboard _expandStoryboard;
-        private readonly Storyboard _shrinkStoryboard;
+        private Storyboard _expandStoryboard;
+        private Storyboard _shrinkStoryboard;
 
         private Panel _bottomPanel;
         public VideoPreview()
@@ -29,7 +29,6 @@ namespace netflix_opensilver.Themes.Units
             MouseEnter += OnMouseEnter;
             MouseLeave += OnMouseLeave;
 
-            // 애니메이션 설정 (스케일 변화)
             _expandStoryboard = CreateScaleAnimation(1, 1.5);
             _shrinkStoryboard = CreateScaleAnimation(1.5, 1);
 
@@ -38,6 +37,7 @@ namespace netflix_opensilver.Themes.Units
                 _bottomPanel.Visibility = Visibility.Collapsed;
             };
         }
+
 
         public override void OnApplyTemplate()
         {
@@ -53,7 +53,6 @@ namespace netflix_opensilver.Themes.Units
 
         private void OnMouseEnter(object sender, MouseEventArgs e)
         {
-            //Canvas.SetZIndex(this,-10);
             _bottomPanel.Visibility = Visibility.Visible;
             _expandStoryboard.Begin();
         }

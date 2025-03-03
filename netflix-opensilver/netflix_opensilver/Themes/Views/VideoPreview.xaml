@@ -3,7 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="clr-namespace:netflix_opensilver.Themes.Units">
 
-
     <Style TargetType="units:VideoPreview">
         <Setter Property="Template">
             <Setter.Value>
@@ -18,16 +17,12 @@
                                 <RowDefinition Height="6*" />
                                 <RowDefinition Height="4*" />
                             </Grid.RowDefinitions>
-                            <!--<StackPanel.Effect>
-                                <DropShadowEffect
-                                    BlurRadius="4"
-                                    Direction="135"
-                                    Opacity="0.5"
-                                    ShadowDepth="4"
-                                    Color="Black" />
-                            </StackPanel.Effect>-->
-                            <Image Source="{Binding PosterUrl}" IsHitTestVisible="False"/>
-                            <StackPanel x:Name="BottomMenu"
+                            <Grid.RenderTransform>
+                                <ScaleTransform x:Name="scale" />
+                            </Grid.RenderTransform>
+                            <Image IsHitTestVisible="False" Source="{Binding PosterUrl}" />
+                            <StackPanel
+                                x:Name="BottomMenu"
                                 Grid.Row="1"
                                 Margin="10,20,0,0"
                                 HorizontalAlignment="Stretch"
@@ -98,7 +93,6 @@
                             </StackPanel>
                         </Grid>
                     </Border>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

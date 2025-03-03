@@ -43,7 +43,7 @@ namespace netflix_opensilver.ViewModels
         {
             var list = new ObservableCollection<VideoInfo>();
 
-            for (int i = 0 ; i < 5 ; i++)
+            for (int i = 0 ; i < 2 ; i++)
             {
                 list.Add(new VideoInfo
                 {
