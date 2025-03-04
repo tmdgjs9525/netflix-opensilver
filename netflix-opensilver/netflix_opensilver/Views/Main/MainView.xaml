@@ -5,7 +5,7 @@
     xmlns:local="clr-namespace:netflix_opensilver.Views.Main"
     xmlns:units="clr-namespace:netflix_opensilver.Themes.Units">
 
-    <ScrollViewer Background="{StaticResource MainBackgroundBrush}">
+    <ScrollViewer VerticalScrollBarVisibility="Visible" Background="{StaticResource MainBackgroundBrush}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="68" />

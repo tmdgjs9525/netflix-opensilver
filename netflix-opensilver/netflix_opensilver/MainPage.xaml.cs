@@ -15,5 +15,6 @@ namespace netflix_opensilver
 
             // Enter construction logic here...
         }
+
     }
 }
