@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace netflix_opensilver.ViewModels
 {
@@ -24,7 +25,8 @@ namespace netflix_opensilver.ViewModels
         [RelayCommand]
         private void Login()
         {
-            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
+            Application.Current.Host.NavigationState = "/MainView";
+            //_navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
         }
     }
 }

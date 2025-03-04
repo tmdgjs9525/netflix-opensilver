@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using netflix_opensilver.Core;
+using netflix_opensilver.Core.Navigate;
+using netflix_opensilver.Regions;
 using netflix_opensilver.ViewModels;
 using netflix_opensilver.Views;
 using netflix_opensilver.Views.Main;
@@ -22,19 +24,20 @@ namespace netflix_opensilver
         {
             this.InitializeComponent();
 
-            Startup += App_Startup;
             IServiceProvider provider = serviceInitialize();
 
             var mainView = provider.GetRequiredService<MainPage>();
             mainView.DataContext = provider.GetRequiredService<MainPageViewModel>();
 
             Window.Current.Content = mainView;
+
+            Startup += App_Startup;
+
         }
 
         private void App_Startup(object sender, StartupEventArgs e)
         {
             Application.Current.Host.NavigationStateChanged += Host_NavigationStateChanged;
-            //Application.Current.Host.NavigationState = "/LoginView";
             Application.Current.Host.NavigationState = "/LoginView";
             Host_NavigationStateChanged(this, new System.Windows.Interop.NavigationStateChangedEventArgs("", "/LoginView"));
 
@@ -47,25 +50,23 @@ namespace netflix_opensilver
             HandleNavigation(e.NewNavigationState);
         }
 
-        private void HandleNavigation(string newState)
+        private void HandleNavigation(string newUrl)
         {
-            Console.WriteLine("1");
-            // URL에서 페이지 이름 추출
-            string pageName = newState.Trim('/');
+            var navigationRegister = Ioc.Default.GetRequiredService<INavigationRegister>();
+            var viewDictionary = navigationRegister.GetViewDictionary();
 
-            UserControl newPage = pageName switch
-            {
-                "LoginView" => new LoginView(),
-                "MainView" => new MainView(),
-                _ => new UserControl() // 없는 페이지 처리
-            };
-            var rootVisual = Application.Current.RootVisual as Page; Console.WriteLine("2");
+            // URL에서 페이지 이름 추출
+            string pageName = newUrl.Trim('/');
+
+            var control = Ioc.Default.GetRequiredService(viewDictionary[pageName].Item1) as UserControl;
+            control.DataContext = Ioc.Default.GetRequiredService(viewDictionary[pageName].Item2);
+
+            var rootVisual = Application.Current.RootVisual as Page; 
 
             // 루트 그리드에 페이지 추가
             if (rootVisual.Content is TransitioningContentControl contentControl)
             {
-                contentControl.Content = newPage;
-                Console.WriteLine("3");
+                contentControl.Content = control;
             }
         }
 

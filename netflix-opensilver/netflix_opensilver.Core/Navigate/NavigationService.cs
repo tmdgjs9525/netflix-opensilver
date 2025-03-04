@@ -25,7 +25,11 @@ namespace netflix_opensilver.Core.Navigate
 
             _serviceCollection.AddSingleton<INavigationRegister>(this);
             _serviceCollection.AddSingleton<IRegionRegister>(this);
+        }
 
+        public Dictionary<string, Tuple<Type,Type>> GetViewDictionary()
+        {
+            return _viewDictionary;
         }
 
         public void RegisterRegion(string regionName, ContentControl control)

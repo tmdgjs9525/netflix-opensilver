@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System.Collections.Generic;
+using System;
+using System.Windows.Controls;
 using netflix_opensilver.Core.Parameter;
 
 namespace netflix_opensilver.Core.Navigate
@@ -10,6 +12,8 @@ namespace netflix_opensilver.Core.Navigate
 
     public interface INavigationRegister
     {
+        Dictionary<string, Tuple<Type, Type>> GetViewDictionary();
+
         public void AddTransientNavigation<TView, TViewModel>() where TView : Control
                                                                 where TViewModel : ViewModelBase;
         public void AddSingletonNavigation<TView, TViewModel>() where TView : Control
